@@ -12,9 +12,9 @@
  * @since         1.3.0
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
-namespace Cake\Test\TestCase\Console\Command;
+namespace Cake\Test\TestCase\Shell;
 
-use Cake\Console\Command\BakeShellShell;
+use Cake\Shell\BakeShellShell;
 use Cake\Controller\Controller;
 use Cake\Core\App;
 use Cake\Core\Configure;
@@ -40,7 +40,7 @@ class BakeShellTest extends TestCase {
 		$this->io = $this->getMock('Cake\Console\ConsoleIo', [], [], '', false);
 
 		$this->Shell = $this->getMock(
-			'Cake\Console\Command\BakeShell',
+			'Cake\Shell\BakeShell',
 			['in', 'out', 'hr', 'err', 'createFile', '_stop'],
 			[$this->io]
 		);
@@ -63,9 +63,9 @@ class BakeShellTest extends TestCase {
  * @return void
  */
 	public function testAllWithModelName() {
-		$this->Shell->Model = $this->getMock('Cake\Console\Command\Task\ModelTask');
-		$this->Shell->Controller = $this->getMock('Cake\Console\Command\Task\ControllerTask');
-		$this->Shell->View = $this->getMock('Cake\Console\Command\Task\ModelTask');
+		$this->Shell->Model = $this->getMock('Cake\Shell\Task\ModelTask');
+		$this->Shell->Controller = $this->getMock('Cake\Shell\Task\ControllerTask');
+		$this->Shell->View = $this->getMock('Cake\Shell\Task\ModelTask');
 
 		$this->Shell->Model->expects($this->once())
 			->method('bake')

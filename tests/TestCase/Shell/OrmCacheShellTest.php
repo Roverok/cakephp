@@ -12,10 +12,10 @@
  * @since         3.0.0
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
-namespace Cake\Test\TestCase\Console\Command;
+namespace Cake\Test\TestCase\Shell;
 
 use Cake\Cache\Cache;
-use Cake\Console\Command\OrmCacheShell;
+use Cake\Shell\OrmCacheShell;
 use Cake\Datasource\ConnectionManager;
 use Cake\TestSuite\TestCase;
 

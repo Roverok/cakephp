@@ -12,9 +12,9 @@
  * @since         1.3.0
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
-namespace Cake\Test\TestCase\Console\Command\Task;
+namespace Cake\Test\TestCase\Shell\Task;
 
-use Cake\Console\Command\Task\TemplateTask;
+use Cake\Shell\Task\TemplateTask;
 use Cake\Core\App;
 use Cake\Core\Configure;
 use Cake\Core\Plugin;
@@ -36,7 +36,7 @@ class PluginTaskTest extends TestCase {
 		parent::setUp();
 		$this->io = $this->getMock('Cake\Console\ConsoleIo', [], [], '', false);
 
-		$this->Task = $this->getMock('Cake\Console\Command\Task\PluginTask',
+		$this->Task = $this->getMock('Cake\Shell\Task\PluginTask',
 			array('in', 'err', 'createFile', '_stop', 'clear', 'callProcess'),
 			array($this->io)
 		);
@@ -224,7 +224,7 @@ class PluginTaskTest extends TestCase {
 		array_unshift($paths, '/fake/path');
 		$paths[] = '/fake/path2';
 
-		$this->Task = $this->getMock('Cake\Console\Command\Task\PluginTask',
+		$this->Task = $this->getMock('Cake\Shell\Task\PluginTask',
 			array('in', 'out', 'err', 'createFile', '_stop'),
 			array($this->io)
 		);

@@ -19,7 +19,7 @@
  * Class SampleShell
  *
  */
-namespace TestApp\Console\Command;
+namespace TestApp\Shell;
 
 use Cake\Console\Shell;
 

@@ -19,7 +19,7 @@
  * Class OtherTaskTask
  *
  */
-namespace TestPlugin\Console\Command\Task;
+namespace TestPlugin\Shell\Task;
 
 use Cake\Console\Shell;
 

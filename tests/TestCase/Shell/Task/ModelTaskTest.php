@@ -12,10 +12,10 @@
  * @since         1.2.6
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
-namespace Cake\Test\TestCase\Console\Command\Task;
+namespace Cake\Test\TestCase\Shell\Task;
 
-use Cake\Console\Command\Task\ModelTask;
-use Cake\Console\Command\Task\TemplateTask;
+use Cake\Shell\Task\ModelTask;
+use Cake\Shell\Task\TemplateTask;
 use Cake\Core\Configure;
 use Cake\Core\Plugin;
 use Cake\Model\Model;
@@ -49,7 +49,7 @@ class ModelTaskTest extends TestCase {
 		parent::setUp();
 		$io = $this->getMock('Cake\Console\ConsoleIo', [], [], '', false);
 
-		$this->Task = $this->getMock('Cake\Console\Command\Task\ModelTask',
+		$this->Task = $this->getMock('Cake\Shell\Task\ModelTask',
 			array('in', 'err', 'createFile', '_stop', '_checkUnitTest'),
 			array($io)
 		);
@@ -66,7 +66,7 @@ class ModelTaskTest extends TestCase {
 	protected function _useMockedOut() {
 		$io = $this->getMock('Cake\Console\ConsoleIo', [], [], '', false);
 
-		$this->Task = $this->getMock('Cake\Console\Command\Task\ModelTask',
+		$this->Task = $this->getMock('Cake\Shell\Task\ModelTask',
 			array('in', 'out', 'err', 'hr', 'createFile', '_stop', '_checkUnitTest'),
 			array($io)
 		);
@@ -81,8 +81,8 @@ class ModelTaskTest extends TestCase {
 	protected function _setupOtherMocks() {
 		$io = $this->getMock('Cake\Console\ConsoleIo', [], [], '', false);
 
-		$this->Task->Fixture = $this->getMock('Cake\Console\Command\Task\FixtureTask', [], [$io]);
-		$this->Task->Test = $this->getMock('Cake\Console\Command\Task\FixtureTask', [], [$io]);
+		$this->Task->Fixture = $this->getMock('Cake\Shell\Task\FixtureTask', [], [$io]);
+		$this->Task->Test = $this->getMock('Cake\Shell\Task\FixtureTask', [], [$io]);
 		$this->Task->Template = new TemplateTask($io);
 		$this->Task->Template->interactive = false;
 

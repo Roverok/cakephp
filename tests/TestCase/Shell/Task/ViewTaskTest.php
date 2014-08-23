@@ -12,10 +12,10 @@
  * @since         1.2.0
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
-namespace Cake\Test\TestCase\Console\Command\Task;
+namespace Cake\Test\TestCase\Shell\Task;
 
-use Cake\Console\Command\Task\TemplateTask;
-use Cake\Console\Command\Task\ViewTask;
+use Cake\Shell\Task\TemplateTask;
+use Cake\Shell\Task\ViewTask;
 use Cake\Controller\Controller;
 use Cake\Core\Configure;
 use Cake\Core\Plugin;
@@ -56,7 +56,7 @@ class ViewTaskArticlesTable extends Table {
  */
 class ViewTaskCommentsController extends Controller {
 
-	public $modelClass = 'Cake\Test\TestCase\Console\Command\Task\ViewTaskCommentsTable';
+	public $modelClass = 'Cake\Test\TestCase\Shell\Task\ViewTaskCommentsTable';
 
 /**
  * Testing public controller action
@@ -117,12 +117,12 @@ class ViewTaskTest extends TestCase {
 	protected function _setupTask($methods) {
 		$io = $this->getMock('Cake\Console\ConsoleIo', [], [], '', false);
 
-		$this->Task = $this->getMock('Cake\Console\Command\Task\ViewTask',
+		$this->Task = $this->getMock('Cake\Shell\Task\ViewTask',
 			$methods,
 			[$io]
 		);
 		$this->Task->Template = new TemplateTask($io);
-		$this->Task->Model = $this->getMock('Cake\Console\Command\Task\ModelTask', [], [$io]);
+		$this->Task->Model = $this->getMock('Cake\Shell\Task\ModelTask', [], [$io]);
 
 		$this->Task->Template->params['template'] = 'default';
 		$this->Task->Template->templatePaths = ['default' => CAKE . 'Template/Bake/default/'];

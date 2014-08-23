@@ -12,10 +12,10 @@
  * @since         1.3.0
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
-namespace Cake\Test\TestCase\Console\Command\Task;
+namespace Cake\Test\TestCase\Shell\Task;
 
-use Cake\Console\Command\Task\FixtureTask;
-use Cake\Console\Command\Task\TemplateTask;
+use Cake\Shell\Task\FixtureTask;
+use Cake\Shell\Task\TemplateTask;
 use Cake\Core\Plugin;
 use Cake\Datasource\ConnectionManager;
 use Cake\ORM\TableRegistry;
@@ -43,11 +43,11 @@ class FixtureTaskTest extends TestCase {
 		parent::setUp();
 		$io = $this->getMock('Cake\Console\ConsoleIo', [], [], '', false);
 
-		$this->Task = $this->getMock('Cake\Console\Command\Task\FixtureTask',
+		$this->Task = $this->getMock('Cake\Shell\Task\FixtureTask',
 			array('in', 'err', 'createFile', '_stop', 'clear'),
 			array($io)
 		);
-		$this->Task->Model = $this->getMock('Cake\Console\Command\Task\ModelTask',
+		$this->Task->Model = $this->getMock('Cake\Shell\Task\ModelTask',
 			array('in', 'out', 'err', 'createFile', 'getName', 'getTable', 'listAll'),
 			array($io)
 		);

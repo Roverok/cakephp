@@ -12,10 +12,10 @@
  * @since         2.5.0
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
-namespace Cake\Test\TestCase\Console\Command;
+namespace Cake\Test\TestCase\Shell;
 
-use Cake\Console\Command\CompletionShell;
-use Cake\Console\Command\Task\CommandTask;
+use Cake\Shell\CompletionShell;
+use Cake\Shell\Task\CommandTask;
 use Cake\Console\ConsoleIo;
 use Cake\Console\ConsoleOutput;
 use Cake\Console\Shell;
@@ -54,13 +54,13 @@ class CompletionShellTest extends TestCase {
 		$io = new ConsoleIo($this->out);
 
 		$this->Shell = $this->getMock(
-			'Cake\Console\Command\CompletionShell',
+			'Cake\Shell\CompletionShell',
 			['in', '_stop', 'clear'],
 			[$io]
 		);
 
 		$this->Shell->Command = $this->getMock(
-			'Cake\Console\Command\Task\CommandTask',
+			'Cake\Shell\Task\CommandTask',
 			['in', '_stop', 'clear'],
 			[$io]
 		);

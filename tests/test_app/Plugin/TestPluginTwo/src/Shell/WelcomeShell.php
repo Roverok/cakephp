@@ -17,7 +17,7 @@
  * Class WelcomeShell
  *
  */
-namespace TestPluginTwo\Console\Command;
+namespace TestPluginTwo\Shell;
 
 use Cake\Console\Shell;
 

@@ -12,10 +12,10 @@
  * @since         1.3.0
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
-namespace Cake\Test\TestCase\Console\Command\Task;
+namespace Cake\Test\TestCase\Shell\Task;
 
-use Cake\Console\Command\Task\ControllerTask;
-use Cake\Console\Command\Task\TemplateTask;
+use Cake\Shell\Task\ControllerTask;
+use Cake\Shell\Task\TemplateTask;
 use Cake\Console\Shell;
 use Cake\Core\App;
 use Cake\Core\Plugin;
@@ -59,7 +59,7 @@ class ControllerTaskTest extends TestCase {
 		parent::setUp();
 
 		$io = $this->getMock('Cake\Console\ConsoleIo', [], [], '', false);
-		$this->Task = $this->getMock('Cake\Console\Command\Task\ControllerTask',
+		$this->Task = $this->getMock('Cake\Shell\Task\ControllerTask',
 			array('in', 'out', 'err', 'hr', 'createFile', '_stop'),
 			array($io)
 		);
@@ -69,12 +69,12 @@ class ControllerTaskTest extends TestCase {
 		$this->Task->Template = new TemplateTask($io);
 		$this->Task->Template->params['theme'] = 'default';
 
-		$this->Task->Model = $this->getMock('Cake\Console\Command\Task\ModelTask',
+		$this->Task->Model = $this->getMock('Cake\Shell\Task\ModelTask',
 			array('in', 'out', 'err', 'createFile', '_stop'),
 			array($io)
 		);
 		$this->Task->Test = $this->getMock(
-			'Cake\Console\Command\Task\TestTask',
+			'Cake\Shell\Task\TestTask',
 			[],
 			[$io]
 		);

@@ -12,9 +12,9 @@
  * @since         1.3.0
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
-namespace Cake\Test\TestCase\Console\Command\Task;
+namespace Cake\Test\TestCase\Shell\Task;
 
-use Cake\Console\Command\Task\TemplateTask;
+use Cake\Shell\Task\TemplateTask;
 use Cake\Core\Configure;
 use Cake\Core\Plugin;
 use Cake\TestSuite\TestCase;
@@ -34,11 +34,11 @@ class SimpleBakeTaskTest extends TestCase {
 		$io = $this->getMock('Cake\Console\ConsoleIo', [], [], '', false);
 
 		$this->Task = $this->getMock(
-			'Cake\Console\Command\Task\SimpleBakeTask',
+			'Cake\Shell\Task\SimpleBakeTask',
 			['in', 'err', 'createFile', '_stop', 'name', 'template', 'fileName'],
 			[$io]
 		);
-		$this->Task->Test = $this->getMock('Cake\Console\Command\Task\TestTask',
+		$this->Task->Test = $this->getMock('Cake\Shell\Task\TestTask',
 			[],
 			[$io]
 		);
@@ -181,10 +181,10 @@ class SimpleBakeTaskTest extends TestCase {
  */
 	public function subclassProvider() {
 		return [
-			['Cake\Console\Command\Task\BehaviorTask'],
-			['Cake\Console\Command\Task\ComponentTask'],
-			['Cake\Console\Command\Task\HelperTask'],
-			['Cake\Console\Command\Task\ShellTask'],
+			['Cake\Shell\Task\BehaviorTask'],
+			['Cake\Shell\Task\ComponentTask'],
+			['Cake\Shell\Task\HelperTask'],
+			['Cake\Shell\Task\ShellTask'],
 		];
 	}
 

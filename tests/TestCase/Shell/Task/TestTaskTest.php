@@ -12,10 +12,10 @@
  * @since         1.2.0
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
-namespace Cake\Test\TestCase\Console\Command\Task;
+namespace Cake\Test\TestCase\Shell\Task;
 
-use Cake\Console\Command\Task\TemplateTask;
-use Cake\Console\Command\Task\TestTask;
+use Cake\Shell\Task\TemplateTask;
+use Cake\Shell\Task\TestTask;
 use Cake\Controller\Controller;
 use Cake\Core\App;
 use Cake\Core\Configure;
@@ -51,7 +51,7 @@ class TestTaskTest extends TestCase {
 		parent::setUp();
 		$this->io = $this->getMock('Cake\Console\ConsoleIo', [], [], '', false);
 
-		$this->Task = $this->getMock('Cake\Console\Command\Task\TestTask',
+		$this->Task = $this->getMock('Cake\Shell\Task\TestTask',
 			array('in', 'err', 'createFile', '_stop', 'isLoadableClass'),
 			array($this->io)
 		);
@@ -78,7 +78,7 @@ class TestTaskTest extends TestCase {
  * @return void
  */
 	public function testExecuteNoArgsPrintsTypeOptions() {
-		$this->Task = $this->getMockBuilder('Cake\Console\Command\Task\TestTask')
+		$this->Task = $this->getMockBuilder('Cake\Shell\Task\TestTask')
 			->disableOriginalConstructor()
 			->setMethods(['outputTypeChoices'])
 			->getMock();
@@ -117,7 +117,7 @@ class TestTaskTest extends TestCase {
  * @return void
  */
 	public function testExecuteOneArgPrintsClassOptions() {
-		$this->Task = $this->getMockBuilder('Cake\Console\Command\Task\TestTask')
+		$this->Task = $this->getMockBuilder('Cake\Shell\Task\TestTask')
 			->disableOriginalConstructor()
 			->setMethods(['outputClassChoices'])
 			->getMock();
@@ -254,8 +254,8 @@ class TestTaskTest extends TestCase {
 			['helper', 'FormHelper', 'App\View\Helper\FormHelper'],
 			['Component', 'Auth', 'App\Controller\Component\AuthComponent'],
 			['component', 'AuthComponent', 'App\Controller\Component\AuthComponent'],
-			['Shell', 'Example', 'App\Console\Command\ExampleShell'],
-			['shell', 'Example', 'App\Console\Command\ExampleShell'],
+			['Shell', 'Example', 'App\Shell\ExampleShell'],
+			['shell', 'Example', 'App\Shell\ExampleShell'],
 			['Cell', 'Example', 'App\View\Cell\ExampleCell'],
 			['cell', 'Example', 'App\View\Cell\ExampleCell'],
 		];
@@ -489,7 +489,7 @@ class TestTaskTest extends TestCase {
 
 		$result = $this->Task->bake('Shell', 'Articles');
 
-		$this->assertContains("use App\Console\Command\ArticlesShell", $result);
+		$this->assertContains("use App\Shell\ArticlesShell", $result);
 		$this->assertContains('class ArticlesShellTest extends TestCase', $result);
 
 		$this->assertContains('function setUp()', $result);
@@ -608,8 +608,8 @@ class TestTaskTest extends TestCase {
 			array('controller', 'App\Controller\PostsController', 'TestCase/Controller/PostsControllerTest.php'),
 			array('behavior', 'App\Model\Behavior\TreeBehavior', 'TestCase/Model/Behavior/TreeBehaviorTest.php'),
 			array('component', 'App\Controller\Component\AuthComponent', 'TestCase/Controller/Component/AuthComponentTest.php'),
-			['Shell', 'App\Console\Command\ExampleShell', 'TestCase/Console/Command/ExampleShellTest.php'],
-			['shell', 'App\Console\Command\ExampleShell', 'TestCase/Console/Command/ExampleShellTest.php'],
+			['Shell', 'App\Shell\ExampleShell', 'TestCase/Console/Command/ExampleShellTest.php'],
+			['shell', 'App\Shell\ExampleShell', 'TestCase/Console/Command/ExampleShellTest.php'],
 		);
 	}
 

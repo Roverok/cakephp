@@ -12,9 +12,9 @@
  * @since         1.3.0
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
-namespace Cake\Test\TestCase\Console\Command\Task;
+namespace Cake\Test\TestCase\Shell\Task;
 
-use Cake\Console\Command\Task\TemplateTask;
+use Cake\Shell\Task\TemplateTask;
 use Cake\Core\App;
 use Cake\TestSuite\TestCase;
 
@@ -32,7 +32,7 @@ class TemplateTaskTest extends TestCase {
 		parent::setUp();
 		$io = $this->getMock('Cake\Console\ConsoleIo', [], [], '', false);
 
-		$this->Task = $this->getMock('Cake\Console\Command\Task\TemplateTask',
+		$this->Task = $this->getMock('Cake\Shell\Task\TemplateTask',
 			array('in', 'err', 'createFile', '_stop', 'clear'),
 			array($io)
 		);

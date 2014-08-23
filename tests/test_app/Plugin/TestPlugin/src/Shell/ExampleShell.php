@@ -16,7 +16,7 @@
 /**
  * Class ExampleShell
  */
-namespace TestPlugin\Console\Command;
+namespace TestPlugin\Shell;
 
 use Cake\Console\Shell;
 
