@@ -178,7 +178,7 @@ class CommandTask extends Shell {
 
 		$name = Inflector::camelize($name);
 		$pluginDot = Inflector::camelize($pluginDot);
-		$class = App::className($pluginDot . $name, 'Console/Command', 'Shell');
+		$class = App::className($pluginDot . $name, 'Shell', 'Shell');
 		if (!$class) {
 			return false;
 		}

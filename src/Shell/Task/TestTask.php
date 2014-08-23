@@ -52,7 +52,7 @@ class TestTask extends BakeTask {
 		'Component' => 'Controller\Component',
 		'Behavior' => 'Model\Behavior',
 		'Helper' => 'View\Helper',
-		'Shell' => 'Console\Command',
+		'Shell' => 'Shell',
 		'Cell' => 'View\Cell',
 	];
 

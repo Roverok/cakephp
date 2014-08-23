@@ -156,7 +156,7 @@ class BakeShell extends Shell {
 				continue;
 			}
 			$name = $item->getBasename('.php');
-			$candidates[] = $namespace . '\Console\Command\Task\\' . $name;
+			$candidates[] = $namespace . '\Shell\Task\\' . $name;
 		}
 		return $candidates;
 	}

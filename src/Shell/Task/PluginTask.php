@@ -101,7 +101,7 @@ class PluginTask extends BakeTask {
 				$classBase . DS . 'Model' . DS . 'Behavior',
 				$classBase . DS . 'Model' . DS . 'Table',
 				$classBase . DS . 'Model' . DS . 'Entity',
-				$classBase . DS . 'Console' . DS . 'Command' . DS . 'Task',
+				$classBase . DS . 'Shell' . DS . 'Task',
 				$classBase . DS . 'Controller' . DS . 'Component',
 				$classBase . DS . 'View' . DS . 'Helper',
 				$classBase . DS . 'Template',
