@@ -608,8 +608,8 @@ class TestTaskTest extends TestCase {
 			array('controller', 'App\Controller\PostsController', 'TestCase/Controller/PostsControllerTest.php'),
 			array('behavior', 'App\Model\Behavior\TreeBehavior', 'TestCase/Model/Behavior/TreeBehaviorTest.php'),
 			array('component', 'App\Controller\Component\AuthComponent', 'TestCase/Controller/Component/AuthComponentTest.php'),
-			['Shell', 'App\Shell\ExampleShell', 'TestCase/Console/Command/ExampleShellTest.php'],
-			['shell', 'App\Shell\ExampleShell', 'TestCase/Console/Command/ExampleShellTest.php'],
+			['Shell', 'App\Shell\ExampleShell', 'TestCase/Shell/ExampleShellTest.php'],
+			['shell', 'App\Shell\ExampleShell', 'TestCase/Shell/ExampleShellTest.php'],
 		);
 	}
 

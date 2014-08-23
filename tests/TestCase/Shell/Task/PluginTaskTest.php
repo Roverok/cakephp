@@ -90,7 +90,7 @@ class PluginTaskTest extends TestCase {
 			'src/Model/Behavior',
 			'src/Model/Table',
 			'src/Model/Entity',
-			'src/Console/Command/Task',
+			'src/Shell/Task',
 			'src/Controller/Component',
 			'src/View/Helper',
 			'tests/TestCase/Controller/Component',
