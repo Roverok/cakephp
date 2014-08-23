@@ -26,7 +26,7 @@ class ShellTask extends SimpleBakeTask {
  *
  * @var string
  */
-	public $pathFragment = 'Console/Command/';
+	public $pathFragment = 'Shell/';
 
 /**
  * {@inheritDoc}

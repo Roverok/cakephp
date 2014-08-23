@@ -94,9 +94,9 @@ class BakeShell extends Shell {
  * Scans the following paths for tasks that are subclasses of
  * Cake\Shell\Task\BakeTask:
  *
- * - Cake/Console/Command/Task/
- * - App/Console/Command/Task/
- * - Console/Command/Task for each loaded plugin
+ * - Cake/Shell/Task/
+ * - App/Shell/Task/
+ * - Shell/Task for each loaded plugin
  *
  * @return void
  */
@@ -126,7 +126,7 @@ class BakeShell extends Shell {
  * @return array Updated tasks.
  */
 	protected function _findTasks($tasks, $path, $namespace, $prefix = false) {
-		$path .= 'Console/Command/Task';
+		$path .= 'Shell/Task';
 		if (!is_dir($path)) {
 			return $tasks;
 		}
